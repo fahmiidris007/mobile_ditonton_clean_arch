@@ -12,7 +12,6 @@ class TvSeriesModel extends Equatable {
   final String overview;
   final double popularity;
   final String? posterPath;
-  final DateTime? firstAirDate;
   final String name;
   final double voteAverage;
   final int voteCount;
@@ -28,7 +27,6 @@ class TvSeriesModel extends Equatable {
     required this.overview,
     required this.popularity,
     required this.posterPath,
-    required this.firstAirDate,
     required this.name,
     required this.voteAverage,
     required this.voteCount,
@@ -45,7 +43,6 @@ class TvSeriesModel extends Equatable {
         overview: json["overview"],
         popularity: json["popularity"]?.toDouble(),
         posterPath: json["poster_path"],
-        firstAirDate: DateTime.parse(json["first_air_date"]),
         name: json["name"],
         voteAverage: json["vote_average"]?.toDouble(),
         voteCount: json["vote_count"],
@@ -62,8 +59,6 @@ class TvSeriesModel extends Equatable {
         "overview": overview,
         "popularity": popularity,
         "poster_path": posterPath,
-        "first_air_date":
-            "${firstAirDate?.year.toString().padLeft(4, '0')}-${firstAirDate?.month.toString().padLeft(2, '0')}-${firstAirDate?.day.toString().padLeft(2, '0')}",
         "name": name,
         "vote_average": voteAverage,
         "vote_count": voteCount,
@@ -81,7 +76,6 @@ class TvSeriesModel extends Equatable {
       overview: overview,
       popularity: popularity,
       posterPath: posterPath,
-      firstAirDate: firstAirDate,
       name: name,
       voteAverage: voteAverage,
       voteCount: voteCount,
@@ -100,7 +94,6 @@ class TvSeriesModel extends Equatable {
         overview,
         popularity,
         posterPath,
-        firstAirDate,
         name,
         voteAverage,
         voteCount,

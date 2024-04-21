@@ -1,6 +1,9 @@
-# a199-flutter-expert-project
+# Mobile Ditonton Clean Architecture
 
-Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
+Repository ini merupakan project submission kelas *Flutter Expert* Dicoding Indonesia.
+
+# Code Magic CI/CD Result Badge
+[![Codemagic build status](https://api.codemagic.io/apps/661b579d786fe91898593988/661b579d786fe91898593987/status_badge.svg)](https://codemagic.io/apps/661b579d786fe91898593988/661b579d786fe91898593987/latest_build)
 
 ---
 

@@ -18,7 +18,6 @@ void main() {
     posterPath: "/path.jpg",
     originalLanguage: "en",
     originalName: "original_name",
-    firstAirDate: DateTime.parse("2020-05-05"),
     name: "name",
     voteAverage: 1.0,
     voteCount: 1,
@@ -57,7 +56,6 @@ void main() {
             "poster_path": "/path.jpg",
             "original_language": "en",
             "original_name": "original_name",
-            "first_air_date": "2020-05-05",
             "name": "name",
             "vote_average": 1.0,
             "vote_count": 1
