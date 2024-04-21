@@ -1,13 +1,25 @@
 import 'package:bloc/bloc.dart';
+import 'package:ditonton/domain/entities/movie/movie.dart';
+import 'package:ditonton/domain/usecases/movie/search_movies.dart';
 import 'package:equatable/equatable.dart';
 
 part 'movie_search_event.dart';
 part 'movie_search_state.dart';
 
 class MovieSearchBloc extends Bloc<MovieSearchEvent, MovieSearchState> {
-  MovieSearchBloc() : super(MovieSearchInitial()) {
-    on<MovieSearchEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  MovieSearchBloc({required this.searchMovies}) : super(MovieSearchInitial()) {
+    on<FetchSearchMovies>(_onFetchSearchMovies);
+  }
+
+  final SearchMovies searchMovies;
+
+  Future<void> _onFetchSearchMovies(
+      FetchSearchMovies event, Emitter<MovieSearchState> emit) async {
+    emit(MovieSearchLoading());
+    final result = await searchMovies.execute(event.query);
+    result.fold(
+      (failure) => emit(MovieSearchError(failure.message)),
+      (movies) => emit(MovieSearchLoaded(movies)),
+    );
   }
 }
