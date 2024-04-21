@@ -13,7 +13,6 @@ final testTvSeries = TvSeries(
   overview: 'overview',
   popularity: 1.0,
   posterPath: '/path.jpg',
-  firstAirDate: DateTime.parse('2020-05-05'),
   name: 'name',
   originalName: 'original_name',
   voteAverage: 1.0,
