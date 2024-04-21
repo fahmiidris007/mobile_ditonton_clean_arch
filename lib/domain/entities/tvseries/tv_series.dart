@@ -12,7 +12,6 @@ class TvSeries extends Equatable {
     required this.overview,
     required this.popularity,
     required this.posterPath,
-    required this.firstAirDate,
     required this.name,
     required this.voteAverage,
     required this.voteCount,
@@ -35,7 +34,6 @@ class TvSeries extends Equatable {
   String? overview;
   double? popularity;
   String? posterPath;
-  DateTime? firstAirDate;
   String? name;
   double? voteAverage;
   int? voteCount;
@@ -52,7 +50,6 @@ class TvSeries extends Equatable {
         overview,
         popularity,
         posterPath,
-        firstAirDate,
         name,
         voteAverage,
         voteCount,
