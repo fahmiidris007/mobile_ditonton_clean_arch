@@ -4,8 +4,6 @@ import 'package:ditonton/data/models/movie/movie_detail_model.dart';
 import 'package:ditonton/data/models/movie/movie_model.dart';
 import 'package:ditonton/data/models/movie/movie_response.dart';
 import 'package:ditonton/common/exception.dart';
-import 'package:ditonton/data/models/tvseries/tv_series_model.dart';
-import 'package:ditonton/data/models/tvseries/tv_series_reponse.dart';
 import 'package:http/http.dart' as http;
 
 abstract class MovieRemoteDataSource {
@@ -15,8 +13,6 @@ abstract class MovieRemoteDataSource {
   Future<MovieDetailResponse> getMovieDetail(int id);
   Future<List<MovieModel>> getMovieRecommendations(int id);
   Future<List<MovieModel>> searchMovies(String query);
-  //tv series
-  Future<List<TvSeriesModel>> getNowPlayingTvSeries();
 }
 
 class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
@@ -94,17 +90,6 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
     if (response.statusCode == 200) {
       return MovieResponse.fromJson(json.decode(response.body)).movieList;
-    } else {
-      throw ServerException();
-    }
-  }
-
-  @override
-  Future<List<TvSeriesModel>> getNowPlayingTvSeries() async {
-    final response =
-        await client.get(Uri.parse('$BASE_URL/tv/airing_today?$API_KEY'));
-    if (response.statusCode == 200) {
-      return TvSeriesResponse.fromJson(json.decode(response.body)).tvSeriesList;
     } else {
       throw ServerException();
     }
