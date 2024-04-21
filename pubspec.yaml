@@ -40,6 +40,13 @@ dependencies:
   flutter_bloc: ^8.1.5
   mocktail: ^1.0.3
 
+  core:
+    path: core
+  movies:
+    path: movies
+  tvseries:
+    path: tvseries
+
 dev_dependencies:
   mockito: ^5.0.8
   build_runner: ^2.0.4
